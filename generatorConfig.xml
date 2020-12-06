@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 主要修改 数据库名称， table中数据库中表名与JavaBen中名字
+    关于注释问题：
+        suppressAllComments=true 不生成注释
+        suppressAllComments=false 生成注释
+-->
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- 数据库信息，修改数据库 --
+        >
+        <jdbcConnection 
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/carpooling?characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false"
+                userId="root"
+                password="root"
+        />
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+<!-- 指定 JavaBean生成的位置
+        targetPackage:生成的包名
+        targetProject：生成的项目地址
+        -->
+        <javaModelGenerator
+            targetPackage="online.wenmeng.bean"
+            targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        
+        <!-- 指定SQL映射文件生成的位置
+            targetPackage: 生成的包名
+            targetProject:生成的项目地址
+        -->
+        <sqlMapGenerator
+                targetPackage="mapper"
+                targetProject=".\src\main\resources">
+            <!--  -->
+            <property name="" value=""/>
+        </sqlMapGenerator>
+        
+        <!-- 指定dao生成的位置 -->
+        <javaClientGenerator  type="XMLMAPPER"
+            targetPackage="online.wenmeng.dao"
+            targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- table 指定每个表的生成策略
+            tableName：数据库中的表名
+            domainObjectName:在程序中对应的JavaBean名称
+        -->
+        <table tableName="c_user" domainObjectName="c_user" >
+<!--            <columnOverride column="userID" javaType="java.lang.Integer"/>-->
+<!--            <columnOverride column="userName" javaType="java.lang.String"/>-->
+<!--            <columnOverride column="userPwd" javaType="java.lang.String"/>-->
+        </table>
+        <table tableName="c_userinfo" domainObjectName="c_userinfo" />
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,10 @@
+Mybatis逆向工具（由IDEA创建，使用Maven控制jar）
+    只需简单修改generatorConfig.xml中的一些属性,运行online.wenmeng.App中的Main方法即可
+        注意：
+            1、修改数据库名称
+            2、修改数据库中表与JavaBean中表的关系
+                如果生成不准确，可以在表中添加相应约束（例如：已经注释的那些）
+            3、生成资源的放置
+                dao层：online.wenmeng.dao
+                JavaBean层：online.wenmeng.bean
+                Mybatis中XML映射：resources/mapper
