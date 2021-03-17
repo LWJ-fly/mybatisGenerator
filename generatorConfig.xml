@@ -12,11 +12,10 @@
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
-        <!-- 数据库信息，修改数据库 --
-        >
+        <!-- 数据库信息，修改数据库 -->
         <jdbcConnection 
                 driverClass="com.mysql.cj.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/carpooling?characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false"
+                connectionURL="jdbc:mysql://localhost:3306/filmplayer?characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false&amp;nullCatalogMeansCurrent=true"
                 userId="root"
                 password="root"
         />
@@ -56,11 +55,10 @@
             tableName：数据库中的表名
             domainObjectName:在程序中对应的JavaBean名称
         -->
-        <table tableName="c_user" domainObjectName="c_user" >
+        <table tableName="discussion" domainObjectName="Discussion" >
 <!--            <columnOverride column="userID" javaType="java.lang.Integer"/>-->
 <!--            <columnOverride column="userName" javaType="java.lang.String"/>-->
 <!--            <columnOverride column="userPwd" javaType="java.lang.String"/>-->
         </table>
-        <table tableName="c_userinfo" domainObjectName="c_userinfo" />
     </context>
 </generatorConfiguration>
